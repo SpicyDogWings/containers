@@ -5,9 +5,9 @@ services:
     ports:
       - "${APP_PORT}:3552"
     volumes:
-      - /run/user/${USER}/podman/podman.sock:/var/run/docker.sock
+      - /run/user/${PODMAN_USER}/podman/podman.sock:/var/run/docker.sock
       - arcane-data:/app/data
-      - /host/path/to/projects:/app/data/projects
+      - ${PROYECTS_PATH}:/app/data/projects
     environment:
       - APP_URL=${APP_URL}
       - PUID=1000
